@@ -56,7 +56,7 @@ type params struct {
 
 // Parse arguments
 func parceArgs(name, lMask string, args []string) (colName string, p *params, err error) {
-	parsHelp := fmt.Sprintf("%s dumps and saves documents from a Solr collection in json format", name)
+	parsHelp := fmt.Sprintf("%s fetches documents from a Solr collection (index) using a cursor query and exports them to json files", name)
 	parser := argparse.NewParser(name, fmt.Sprintf("%s ", parsHelp))
 	cLink := parser.String("c", "colllink", &argparse.Options{Required: true,
 		Help: "http link to a Solr collection like http[s]://address[:port]/solr/collection"})
