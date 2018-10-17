@@ -172,13 +172,13 @@ func saveSolrResp(dst io.Writer, emptyfl bool, v *glsolr.Response) (err error) {
 	if emptyfl {
 		data, err = rmVerField(v.Response.Docs)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "error of Solr document proccessing. %s\n", err)
+			fmt.Fprintf(os.Stderr, "error of Solr document processing. %s\n", err)
 			return err
 		}
 	} else {
 		data, err = json.Marshal(v.Response.Docs)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "error of Solr document proccessing. %s\n", err)
+			fmt.Fprintf(os.Stderr, "error of Solr document processing. %s\n", err)
 			return err
 		}
 		data = append(data, []byte("\n")...)
