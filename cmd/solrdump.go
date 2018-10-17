@@ -1,3 +1,4 @@
+// solrdump fetches documents from a Solr collection (index) using a cursor query and exports them to json files
 package main
 
 import (
