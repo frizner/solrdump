@@ -261,11 +261,15 @@ func main() {
 	results, err := glsolr.CursorSelect(p.cLink, p.user, p.passw, params, headers, client)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "wrong query. %s\n", err)
-		os.Exit(-3)
+		os.Exit(3)
 	}
 
 	// get name pattern like PreffixServer.port.collection
 	namePattern, err := defNamePattern(colName, p.cLink)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "wrong query. %s\n", err)
+		os.Exit(4)
+	}
 
 	// make directory
 	fullDirPath, err := mkDir(p.dstDir, namePattern, p.dirPerms)
