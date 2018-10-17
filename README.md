@@ -32,7 +32,7 @@ Download the binary from the [releases](https://github.com/frizner/solrdump/rele
 You can use the go tool to install `solrdump`:
 ```sh
 $ go get "github.com/frizner/solrdump"
-$ go install "github.com/frizner/cmd/solrdump"
+$ go install "github.com/frizner/solrdump/cmd/solrdump"
 ```
 This installs the command into the bin sub-folder of wherever your $GOPATH environment variable points. If this directory is already in your $PATH, then you should be good to go.
 
