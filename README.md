@@ -1,7 +1,7 @@
 # solrdump
 [![Go Report Card](https://goreportcard.com/badge/github.com/frizner/solrdump)](https://goreportcard.com/report/github.com/frizner/solrdump)
 
-**solrdump** fetches documents from a Solr collection using a cursor query and saves them as JSON files in a new directory:
+`solrdump` fetches documents from a Solr collection using a cursor query and saves them as JSON files in a new directory:
 ```sh
 $ solrdump -c "http://solrsrv01:8983/solr/gettingstarted" -r 10 -s "id asc"
 $ ls
@@ -17,7 +17,7 @@ solrsrv01.8983.gettingstarted.6.json
 ```
 
 ## Feauteres
-- Requesting the documents from a Solr collection using [a cursor. query](https://lucene.apache.org/solr/guide/pagination-of-results.html) in order to avoid the problem of ["Deep paging"](https://lucene.apache.org/solr/guide/pagination-of-results.html#performance-problems-with-deep-paging).
+- Requesting the documents from a Solr collection using [a cursor query](https://lucene.apache.org/solr/guide/pagination-of-results.html) in order to avoid the problem of ["Deep paging"](https://lucene.apache.org/solr/guide/pagination-of-results.html#performance-problems-with-deep-paging).
 - Requesting and saving the results are being doing in parallel.
 - `Field list` parameter can be empty. In this case **solrdump** will export documents with all fields removing only `_version_` field.
 ## Constraints
@@ -30,7 +30,7 @@ solrsrv01.8983.gettingstarted.6.json
 ### Binaries
 Download the binary from the [releases](https://github.com/frizner/solrdump/releases) page.
 ### From Source
-You can use the go tool to install `solrdump`:
+You can use the `go` tool to install `solrdump`:
 ```sh
 $ go get "github.com/frizner/solrdump"
 $ go install "github.com/frizner/solrdump/cmd/solrdump"
