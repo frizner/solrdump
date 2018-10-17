@@ -23,6 +23,7 @@ solrsrv01.8983.gettingstarted.6.json
 ## Constraints
   - `start` parameter can not be used because is mutually exclusive with the `cursor`.
   - `sort` parameter is mandatory and must include the `uniqueKey` field (either `asc` or `desc`).
+  
 [More info.](https://lucene.apache.org/solr/guide/7_5/pagination-of-results.html#constraints-when-using-cursors)
 
 ## Installation
