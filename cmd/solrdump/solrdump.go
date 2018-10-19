@@ -30,7 +30,7 @@ const (
 	timeFmt = "20060102-150405"
 
 	// RE to check web link to a Solr collection
-	reLink = `^((https|http):\/\/((([a-z0-9-.]+:\d+)|([a-z0-9-.]+))|([a-z0-9-]+))\/solr\/([\\._A-Za-z0-9\\-]+|([\\._A-Za-z0-9\\-]+)\/))$`
+	reLink = `^((https|http):\/\/((([A-Za-z0-9-.]+:\d+)|([a-z0-9-.]+))|([a-z0-9-]+))\/solr\/([\\._A-Za-z0-9\\-]+|([\\._A-Za-z0-9\\-]+)\/))$`
 
 	// the names of environment variables to get the username and password if they aren't set in the command line
 	userEnv  = "SOLRUSER"
