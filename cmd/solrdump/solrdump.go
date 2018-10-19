@@ -3,7 +3,6 @@ package main
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -90,7 +89,7 @@ func parceArgs(name, lMask string, args []string) (colName string, p *params, er
 		Help: "Permissions for the dump directory"})
 
 	if err = parser.Parse(os.Args); err != nil {
-		return "", p, errors.New(parser.Usage(err))
+		return "", p, fmt.Errorf(parser.Usage(err))
 	}
 
 	// check collection link. SOLR-8642
@@ -98,12 +97,12 @@ func parceArgs(name, lMask string, args []string) (colName string, p *params, er
 	strs := re.FindStringSubmatch(*cLink)
 	if strs == nil {
 		msg := fmt.Sprintf("wrong http link to a solr collection \"%s\"\n", *cLink)
-		return "", nil, errors.New(msg)
+		return "", nil, fmt.Errorf(msg)
 	}
 
 	dirPerms, err := strconv.ParseUint(*strDirPerms, 8, 32)
 	if err != nil {
-		return "", nil, errors.New("wrong directory permissions")
+		return "", nil, fmt.Errorf("wrong directory permissions")
 	}
 
 	// Get credentials from the environment if they aren't set in the command line
@@ -292,7 +291,7 @@ func main() {
 		// Checking the type of result. If error is received, stopping.
 		switch v := res.(type) {
 		case error:
-			fmt.Fprintf(os.Stderr, "query error. %s\n", v)
+			fmt.Fprintln(os.Stderr, v)
 		case *glsolr.Response:
 			// define full name of file to dump the result of one query
 			fileName := fmt.Sprintf("%s%d.json", namePattern, i)
