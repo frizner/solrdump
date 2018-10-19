@@ -1,7 +1,7 @@
 # solrdump
 [![Go Report Card](https://goreportcard.com/badge/github.com/frizner/solrdump)](https://goreportcard.com/report/github.com/frizner/solrdump)
 
-`solrdump` fetches documents from a Solr collection using a cursor query and saves them as JSON files in a new directory:
+`solrdump` fetches documents from a Solr collection using a cursor query and dumps them as JSON files in a new directory:
 ```sh
 $ solrdump -c "http://solrsrv01:8983/solr/gettingstarted" -r 10 -s "id asc"
 $ ls
