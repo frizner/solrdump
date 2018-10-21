@@ -24,8 +24,8 @@ import (
 
 const (
 	// the program name and version
-	name    = "gosolrdump"
-	version = "0.1"
+	name    = "solrdump"
+	version = "0.1.1"
 	// datetime format
 	timeFmt = "20060102-150405"
 

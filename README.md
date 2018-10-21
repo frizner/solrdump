@@ -1,9 +1,9 @@
 # solrdump
 [![Go Report Card](https://goreportcard.com/badge/github.com/frizner/solrdump)](https://goreportcard.com/report/github.com/frizner/solrdump)
 
-`solrdump` fetches documents from a Solr collection using a cursor query and dumps them as JSON files in a new directory:
+`solrdump` is the utility to dump documents from a Solr collection using the cursor query and save them into a directory as JSON files:
 ```sh
-$ solrdump -c "http://solrsrv01:8983/solr/gettingstarted" -r 10 -s "id asc"
+$ solrdump -c "http://solrsrv01:8983/solr/gettingstarted" -r 50000 -s "id asc"
 $ ls
 $ solrsrv01.8983.gettingstarted.20181017-160227
 $ ls solrsrv01.8983.gettingstarted.20181017-160227
@@ -42,13 +42,13 @@ If you have already pulled down this repo to a location that is not in your $GOP
 ## Usage
 ```sh
 $ ~/go/bin/solrdump -h
-usage: gosolrdump [-h|--help] -c|--colllink "<value>" [-q|--query "<value>"]
+usage: solrdump [-h|--help] -c|--colllink "<value>" [-q|--query "<value>"]
                   [-f|--fieldlist "<value>"] -s|--sort "<value>" [-r|--rows
                   <integer>] [-d|--dst "<value>"] [-u|--user "<value>"]
                   [-p|--password "<value>"] [-t|--httpTimeout <integer>]
                   [-m|--perms "<value>"]
 
-                  gosolrdump fetches documents from a Solr collection (index)
+                  solrdump fetches documents from a Solr collection (index)
                   using a cursor query and exports them to json files 
 
 Arguments:
