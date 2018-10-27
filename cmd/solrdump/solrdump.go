@@ -107,11 +107,11 @@ func parceArgs(name, lMask string, args []string) (colName string, p *params, er
 
 	// Get credentials from the environment if they aren't set in the command line
 	if *user == "" {
-		os.Getenv(userEnv)
+		*user = os.Getenv(userEnv)
 	}
 
 	if *passw == "" {
-		os.Getenv(passwEnv)
+		*passw = os.Getenv(passwEnv)
 	}
 
 	p = &params{
