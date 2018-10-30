@@ -5,8 +5,7 @@
 ```sh
 $ solrdump -c "http://solrsrv01:8983/solr/gettingstarted" -r 50000 -s "id asc"
 $ ls
-$ solrsrv01.8983.gettingstarted.20181017-160227
-$ ls solrsrv01.8983.gettingstarted.20181017-160227
+solrsrv01.8983.gettingstarted.20181017-160227
 $ $ ls -1 solrsrv01.8983.gettingstarted.20181017-160227/
 solrsrv01.8983.gettingstarted.1.json
 solrsrv01.8983.gettingstarted.2.json
